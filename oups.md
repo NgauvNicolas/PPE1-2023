@@ -9,3 +9,5 @@ _Texte en italique_
 __Texte en gras__
 ***Texte en italique et en gras***
 ___Texte en italique et en gras___
+
+~~Ce texte est barré.~~ mais pas celui-là.
