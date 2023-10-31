@@ -43,5 +43,5 @@ do
 	fi
 
 	((lineno++));
-done < "$fichier_urls"
+done < "$chemin_urls"
 
