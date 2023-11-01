@@ -4,9 +4,9 @@
 #chemin=$1
 # chemin="../urls/fr.txt"
 
-# Le chemin vers le fichier source d'URLs : ../urls/fic.txt
+# Le chemin vers le fichier source d'URLs : ex : ../urls/fr.txt
 chemin_urls=$1
-# Le fichier HTML qui va contenir le tableau des URLs : fic.html
+# Le fichier HTML qui va contenir le tableau des URLs : tab_fr.html
 fic_tab=$2
 
 if [ $# -ne 2 ]; then
@@ -39,9 +39,10 @@ lineno=0
 while read -r URL;
 do
 	((lineno++));
-	echo -e "\tURL $lineno : $URL";
 	# Réponse HTTP
 	code=$(curl -ILs $URL | grep -e "^HTTP/" | grep -Eo "[0-9]{3}" | tail -n 1)
+
+	echo -e "\t$code	URL $lineno : 	$URL";
 	
 	# Récupération encodage
 	charset=$(curl -Ls $URL | grep -Eo "charset=.+" | cut -d'"' -f2)
@@ -54,9 +55,9 @@ do
 	fi
 
 	if [[ -z $charset ]]; then
-		echo -e "\tencodage non détecté.";
+		echo -e "\t        encodage :	non détecté";
 	else
-		echo -e "\tencodage : $charset";
+		echo -e "\t        encodage : 	$charset";
 	fi
 
 	# Les tabulations dans le echo sont là pour respecter l'indentation dans le fichier HTML qui stocke les URLs sous forme de tableau : pas obligatoires mais plus lisible avec
