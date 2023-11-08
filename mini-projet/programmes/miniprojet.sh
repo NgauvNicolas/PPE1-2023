@@ -6,12 +6,14 @@
 
 # Le chemin vers le fichier source d'URLs : ex : ../urls/fr.txt
 chemin_urls=$1
-# Le fichier HTML qui va contenir le tableau des URLs : tab_fr.html
+# Le fichier HTML qui va contenir le tableau des URLs : exemple, ici tab_fr.html
 fic_tab=$2
 
 if [ $# -ne 2 ]; then
 	echo "On attend deux arguments exactement : veuillez donner un chemin valide vers le fichier texte source d'URLs, ainsi que le nom du fichier HTML dans lequel stocker le tableau d'URLs"
 	exit
+# Vérifie si c'est un fichier, et pas un dossier par exemple
+# $1 ou $chemin_urls	
 elif [ -f $1 ]; then 
 	echo "on a bien un fichier source"
 else 
@@ -45,6 +47,10 @@ do
 	echo -e "\t$code	URL $lineno : 	$URL";
 	
 	# Récupération encodage
+	# L'option -L de curl : pour suivre les redirections
+	# curl -s -I -L -w -o	et '%' pour récupérer une option (cf. photos)
+	# grep -P -o "charset=\S+" ou "charset=\K\S+"
+	# cut -d"=" -f2
 	charset=$(curl -Ls $URL | grep -Eo "charset=.+" | cut -d'"' -f2)
 
 	 # Résultat selon code de réponse HTTP : à voir pour une utilisation ultérieure ?
@@ -64,4 +70,4 @@ do
 	echo "			<tr><td>$lineno</td><td>$code</td><td><a href=\"$URL\">$URL</a></td><td>$charset</td></tr>" >> "../tableaux/$fic_tab"
 
 done < "$chemin_urls"
-
+# done < $chemin_urls
