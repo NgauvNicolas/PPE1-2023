@@ -22,9 +22,9 @@ fi
 mots=$($script $chemin_txt)
 
 # Trouver mots les plus fréquents en comptant occurrences, en les triant, en les regroupant et en prenant nb_mots premiers mots
-freq_mots=$(echo "$mots" | tr " " "\n" | sort | uniq -ci | sort -nr | head -$nb_mots)
+freq_mots=$(echo "$mots" | tr " " "\n" | sort | uniq -ic | sort -rn | head -$nb_mots)
 # Afficher résultat dans terminal pour voir
 echo "$freq_mots"
 
-# Sauvegarder les mots les plus courants dans un fichier "freq_mots.txt".
+# Sauvegarder les mots les plus courants dans un fichier freq_mots.txt.
 echo "$freq_mots" > freq_mots.txt
