@@ -7,6 +7,7 @@ nb_mots=$2
 # Chemin vers le script miniprojetSup_exo1.sh
 script="./miniprojetSup_exo1.sh"
 
+# if [ ! -f "$1" ]
 # Vérification du nb d'arguments donné au script : il en faut au moins 1
 if [ $# -lt 1 ]; then
   echo "Format attendu : $script <source> [nombre_mots_souhaité]"
