@@ -62,13 +62,14 @@ séance faits
 # séance 8 :
 15/11/2023 : Correction des exercices supplémentaires du mini-projet, présentation de la page internet hébérgée sur GitHub et du style Bulma pour le CSS.
 Exercices slides 11 à faire pour la séance prochaine.
+Réflexion sur le mot pour le projet de groupe : après avoir demandé aux professeurs, ils ont dit que ça pouvait être intéressant donc je pense que nous avons trouvé notre mot.
+17/11/2023 : exercices pour la séance 8 finis.
 
 # séance 9 :
 22/11/2023 : A partir de maintenant, travail en groupe sur le projet
 
 Pour continuer à suivre le travail, c'est ici :
 https://github.com/NgauvNicolas/PPE1-2023_Groupe-Projet
-Réflexion sur le mot pour le projet de groupe : après avoir demandé aux professeurs, ils ont dit que ça pouvait être intéressant donc je pense que nous avons trouvé notre mot.
-17/11/2023 : exercices pour la séance 8 finis.
+
 
 
